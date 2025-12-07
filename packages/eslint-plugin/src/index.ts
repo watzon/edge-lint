@@ -74,6 +74,7 @@ const flatConfigs = {
       '@edge-lint/valid-each-syntax': 'error',
       '@edge-lint/no-reserved-variable-names': 'error',
       '@edge-lint/no-invalid-end-tag': 'error',
+      '@edge-lint/no-end-after-selfclosed': 'error',
       '@edge-lint/no-mismatched-curly-braces': 'error',
       '@edge-lint/no-multiple-else': 'error',
       '@edge-lint/valid-vite-tag': 'off', // AdonisJS-specific
@@ -124,6 +125,7 @@ const flatConfigs = {
       '@edge-lint/valid-each-syntax': 'error',
       '@edge-lint/no-reserved-variable-names': 'error',
       '@edge-lint/no-invalid-end-tag': 'error',
+      '@edge-lint/no-end-after-selfclosed': 'error',
       '@edge-lint/no-mismatched-curly-braces': 'error',
       '@edge-lint/no-multiple-else': 'error',
       '@edge-lint/valid-vite-tag': 'warn', // Enable for AdonisJS

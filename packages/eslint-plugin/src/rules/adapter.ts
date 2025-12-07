@@ -39,6 +39,18 @@ function convertMeta(meta: RuleMeta): ESLintRule.RuleMetaData {
 }
 
 /**
+ * Extract Edge lint settings from ESLint context
+ */
+interface EdgeLintSettings {
+  tags?: Record<string, { block: boolean; seekable: boolean }>;
+}
+
+function getEdgeLintSettings(context: ESLintRule.RuleContext): EdgeLintSettings {
+  const settings = context.settings?.['@edge-lint'] as EdgeLintSettings | undefined;
+  return settings ?? {};
+}
+
+/**
  * Create an ESLint rule from a core Edge lint rule
  */
 export function createESLintRule(ruleId: string, coreRule: Rule): ESLintRule.RuleModule {
@@ -56,12 +68,18 @@ export function createESLintRule(ruleId: string, coreRule: Rule): ESLintRule.Rul
       const sourceCode = context.sourceCode;
       const text = sourceCode.text;
 
+      // Get Edge lint settings (custom tags, etc.)
+      const edgeLintSettings = getEdgeLintSettings(context);
+
       // Create a mini linter just for this rule
       const linter = new Linter();
 
       // Get messages from running the rule
       const messages = linter.verify(text, context.filename, {
         rules: { [ruleId]: [2, ...context.options] },
+        parserOptions: {
+          tags: edgeLintSettings.tags,
+        },
       });
 
       // Report messages via ESLint context
