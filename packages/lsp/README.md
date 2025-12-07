@@ -24,7 +24,7 @@ edge-lint-lsp --stdio
 
 ### VS Code Integration
 
-Install the Edge.js extension for VS Code (coming soon), or configure a generic LSP client:
+Configure as a generic LSP client:
 
 ```json
 {
@@ -63,10 +63,10 @@ lspconfig.edgelint.setup({})
 
 ## Server Capabilities
 
-| Capability | Supported |
-|------------|-----------|
-| `textDocumentSync` | Full |
-| `diagnosticProvider` | Yes |
+| Capability           | Supported         |
+| -------------------- | ----------------- |
+| `textDocumentSync`   | Full              |
+| `diagnosticProvider` | Yes               |
 | `codeActionProvider` | Yes (quick fixes) |
 
 ## License
