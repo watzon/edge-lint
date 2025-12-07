@@ -1,0 +1,57 @@
+{
+  "name": "@edge-lint/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for Edge.js linter",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "edge-lint": "./bin/edge-lint.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest --passWithNoTests",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@edge-lint/core": "workspace:*",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "edge",
+    "edgejs",
+    "template",
+    "linter",
+    "cli"
+  ],
+  "license": "MIT",
+  "author": "Christopher Watson <cawatson1993@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watzon/edge-lint.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/watzon/edge-lint/tree/main/packages/cli",
+  "bugs": {
+    "url": "https://github.com/watzon/edge-lint/issues"
+  }
+}

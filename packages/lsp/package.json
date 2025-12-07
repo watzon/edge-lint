@@ -1,0 +1,55 @@
+{
+  "name": "@edge-lint/lsp",
+  "version": "0.1.0",
+  "description": "Language Server Protocol server for Edge.js templates",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "edge-lint-lsp": "./bin/edge-lint-lsp.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest --passWithNoTests",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@edge-lint/core": "workspace:*",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "edge",
+    "edgejs",
+    "lsp",
+    "language-server"
+  ],
+  "license": "MIT",
+  "author": "Christopher Watson <cawatson1993@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watzon/edge-lint.git",
+    "directory": "packages/lsp"
+  },
+  "homepage": "https://github.com/watzon/edge-lint/tree/main/packages/lsp",
+  "bugs": {
+    "url": "https://github.com/watzon/edge-lint/issues"
+  }
+}

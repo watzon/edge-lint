@@ -1,0 +1,55 @@
+{
+  "name": "@edge-lint/eslint-plugin",
+  "version": "0.1.0",
+  "description": "ESLint plugin for Edge.js templates",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest --passWithNoTests",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@edge-lint/core": "workspace:*",
+    "@edge-lint/eslint-parser": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "keywords": [
+    "edge",
+    "edgejs",
+    "eslint",
+    "eslint-plugin"
+  ],
+  "license": "MIT",
+  "author": "Christopher Watson <cawatson1993@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watzon/edge-lint.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "homepage": "https://github.com/watzon/edge-lint/tree/main/packages/eslint-plugin",
+  "bugs": {
+    "url": "https://github.com/watzon/edge-lint/issues"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "@edge-lint/eslint-parser",
+  "version": "0.1.0",
+  "description": "ESLint parser for Edge.js templates",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest --passWithNoTests",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@edge-lint/core": "workspace:*",
+    "edge-lexer": "^6.0.3",
+    "edge-parser": "^9.0.4",
+    "espree": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/estree": "^1.0.6",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "keywords": [
+    "edge",
+    "edgejs",
+    "eslint",
+    "parser"
+  ],
+  "license": "MIT",
+  "author": "Christopher Watson <cawatson1993@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watzon/edge-lint.git",
+    "directory": "packages/eslint-parser"
+  },
+  "homepage": "https://github.com/watzon/edge-lint/tree/main/packages/eslint-parser",
+  "bugs": {
+    "url": "https://github.com/watzon/edge-lint/issues"
+  }
+}
