@@ -31,7 +31,8 @@ const DEPRECATED_HELPERS: Record<string, { replacement: string | null; message: 
 };
 
 // Regex to find deprecated helpers anywhere in the expression
-const HELPER_USAGE_REGEX = /\b(e|stringify|safe|raise)\s*\(/g;
+// Uses negative lookbehind to exclude method calls like js.stringify() or html.escape()
+const HELPER_USAGE_REGEX = /(?<![.\w])(e|stringify|safe|raise)\s*\(/g;
 
 export const noDeprecatedHelpers: Rule = {
   meta: {
