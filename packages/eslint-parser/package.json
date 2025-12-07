@@ -1,6 +1,6 @@
 {
   "name": "@edge-lint/eslint-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ESLint parser for Edge.js templates",
   "type": "module",
   "main": "./dist/index.js",
