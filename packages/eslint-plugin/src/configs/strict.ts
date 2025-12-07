@@ -9,6 +9,7 @@ export const strict: Linter.Config = {
     '@edge-lint/no-empty-mustache': 'error',
     '@edge-lint/valid-expression': 'error',
     '@edge-lint/no-unknown-tag': 'error',
+    '@edge-lint/no-end-after-selfclosed': 'error',
     '@edge-lint/no-unused-let': 'error',
     '@edge-lint/prefer-safe-mustache': 'warn',
     '@edge-lint/mustache-spacing': ['error', 'always'],

@@ -68,6 +68,7 @@ export default [
 | `edge/valid-each-syntax` | Validate @each loop syntax | error | |
 | `edge/no-reserved-variable-names` | Disallow Edge.js reserved keywords as variable names | error | |
 | `edge/no-invalid-end-tag` | Disallow invalid end tag names (use @end instead) | error | Yes |
+| `edge/no-end-after-selfclosed` | Disallow @end after self-closing tags (@!tag) | error | Yes |
 | `edge/no-mismatched-curly-braces` | Ensure mustache braces are properly matched | error | |
 | `edge/no-multiple-else` | Disallow multiple @else blocks in a conditional | error | |
 | `edge/valid-vite-tag` | Validate @vite() tag arguments (AdonisJS) | off | |
