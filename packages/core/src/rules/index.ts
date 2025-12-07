@@ -16,6 +16,7 @@ import { noSpaceBeforeTagArgs } from './syntax/no-space-before-tag-args.js';
 import { validEachSyntax } from './syntax/valid-each-syntax.js';
 import { noReservedVariableNames } from './syntax/no-reserved-variable-names.js';
 import { noInvalidEndTag } from './syntax/no-invalid-end-tag.js';
+import { noEndAfterSelfclosed } from './syntax/no-end-after-selfclosed.js';
 import { noMismatchedCurlyBraces } from './syntax/no-mismatched-curly-braces.js';
 import { noMultipleElse } from './syntax/no-multiple-else.js';
 import { validViteTag } from './syntax/valid-vite-tag.js';
@@ -55,6 +56,7 @@ export const builtinRules: Record<string, Rule> = {
   'valid-each-syntax': validEachSyntax,
   'no-reserved-variable-names': noReservedVariableNames,
   'no-invalid-end-tag': noInvalidEndTag,
+  'no-end-after-selfclosed': noEndAfterSelfclosed,
   'no-mismatched-curly-braces': noMismatchedCurlyBraces,
   'no-multiple-else': noMultipleElse,
   'valid-vite-tag': validViteTag,
@@ -96,6 +98,7 @@ export const recommendedConfig: Record<string, 'error' | 'warn' | 'off'> = {
   'valid-each-syntax': 'error',
   'no-reserved-variable-names': 'error',
   'no-invalid-end-tag': 'error',
+  'no-end-after-selfclosed': 'error',
   'no-mismatched-curly-braces': 'error',
   'no-multiple-else': 'error',
   'valid-vite-tag': 'off', // AdonisJS-specific
@@ -136,6 +139,7 @@ export const strictConfig: Record<string, 'error' | 'warn' | 'off'> = {
   'valid-each-syntax': 'error',
   'no-reserved-variable-names': 'error',
   'no-invalid-end-tag': 'error',
+  'no-end-after-selfclosed': 'error',
   'no-mismatched-curly-braces': 'error',
   'no-multiple-else': 'error',
   'valid-vite-tag': 'warn', // Enable for AdonisJS
@@ -176,6 +180,7 @@ export const allConfig: Record<string, 'error' | 'warn' | 'off'> = {
   'valid-each-syntax': 'error',
   'no-reserved-variable-names': 'error',
   'no-invalid-end-tag': 'error',
+  'no-end-after-selfclosed': 'error',
   'no-mismatched-curly-braces': 'error',
   'no-multiple-else': 'error',
   'valid-vite-tag': 'error',
